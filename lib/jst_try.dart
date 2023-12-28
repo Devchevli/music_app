@@ -19,7 +19,6 @@ class _Audio_PlayerState extends State<Audio_Player> {
       'https://youtu.be/P9zFEN13XYs?list=PL0y6ScMLZlEQjwDUlK6f0uzS5e5Bffxu7',
       'https://youtu.be/P9zFEN13XYs?list=PL0y6ScMLZlEQjwDUlK6f0uzS5e5Bffxu7',
       'https://youtu.be/P9zFEN13XYs?list=PL0y6ScMLZlEQjwDUlK6f0uzS5e5Bffxu7',
-
     ];
 
     final audioPlayer = AudioPlayer();
@@ -96,7 +95,7 @@ class _Audio_PlayerState extends State<Audio_Player> {
                 if (isPlaying) {
                   await audioPlayer.pause();
                 } else {
-                  await audioPlayer.play(song as Source);
+                  await audioPlayer.play(UrlSource("https://youtu.be/P9zFEN13XYs?list=PL0y6ScMLZlEQjwDUlK6f0uzS5e5Bffxu7"));
                 }
               },
             ),

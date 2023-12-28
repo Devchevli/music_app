@@ -12,7 +12,6 @@ class Second_screen extends StatefulWidget {
 class _Second_screenState extends State<Second_screen> {
   @override
   Widget build(BuildContext context) {
-
     final size = MediaQuery.of(context).size;
     return DefaultTabController(
       length: 5,
@@ -22,6 +21,8 @@ class _Second_screenState extends State<Second_screen> {
         appBar: AppBar(
           backgroundColor: Colors.black,
         ),
+
+
         body: Container(
           height: size.height,
           width: size.width,
@@ -114,24 +115,24 @@ class _Second_screenState extends State<Second_screen> {
                                 height: 230,
                                 width: 230,
                                 margin:
-                                const EdgeInsets.only(top: 20, left: 25),
+                                    const EdgeInsets.only(top: 20, left: 25),
                                 decoration: BoxDecoration(
-
                                     image: DecorationImage(
-                                        image: NetworkImage(ListViewScreen[index].image),
+                                        image: NetworkImage(
+                                            ListViewScreen[index].image),
                                         fit: BoxFit.cover),
                                     borderRadius: BorderRadius.circular(20),
                                     color: Colors.transparent),
                               ),
                               Padding(
-                                padding:
-                                const EdgeInsets.only( left: 20),
+                                padding: const EdgeInsets.only(left: 20),
                                 child: Container(
                                   color: Colors.transparent,
                                   height: 35,
                                   width: 210,
                                   alignment: Alignment.center,
-                                  child: Align(alignment: Alignment.centerLeft,
+                                  child: Align(
+                                    alignment: Alignment.centerLeft,
                                     child: Text(
                                       ListViewScreen[index].text,
                                       style: const TextStyle(
@@ -162,9 +163,8 @@ class _Second_screenState extends State<Second_screen> {
                                 height: 230,
                                 width: 230,
                                 margin:
-                                const EdgeInsets.only(top: 20, left: 25),
+                                    const EdgeInsets.only(top: 20, left: 25),
                                 decoration: BoxDecoration(
-
                                     image: DecorationImage(
                                         image: NetworkImage(Top50[index].image),
                                         fit: BoxFit.cover),
@@ -172,14 +172,14 @@ class _Second_screenState extends State<Second_screen> {
                                     color: Colors.transparent),
                               ),
                               Padding(
-                                padding:
-                                const EdgeInsets.only( left: 20),
+                                padding: const EdgeInsets.only(left: 20),
                                 child: Container(
                                   color: Colors.transparent,
                                   height: 35,
                                   width: 210,
                                   alignment: Alignment.center,
-                                  child: Align(alignment: Alignment.centerLeft,
+                                  child: Align(
+                                    alignment: Alignment.centerLeft,
                                     child: Text(
                                       Top50[index].text,
                                       style: const TextStyle(
@@ -210,9 +210,8 @@ class _Second_screenState extends State<Second_screen> {
                                 height: 230,
                                 width: 230,
                                 margin:
-                                const EdgeInsets.only(top: 20, left: 25),
+                                    const EdgeInsets.only(top: 20, left: 25),
                                 decoration: BoxDecoration(
-
                                     image: DecorationImage(
                                         image: NetworkImage(Chill[index].image),
                                         fit: BoxFit.cover),
@@ -220,14 +219,14 @@ class _Second_screenState extends State<Second_screen> {
                                     color: Colors.transparent),
                               ),
                               Padding(
-                                padding:
-                                const EdgeInsets.only( left: 20),
+                                padding: const EdgeInsets.only(left: 20),
                                 child: Container(
                                   color: Colors.transparent,
                                   height: 35,
                                   width: 210,
                                   alignment: Alignment.center,
-                                  child: Align(alignment: Alignment.centerLeft,
+                                  child: Align(
+                                    alignment: Alignment.centerLeft,
                                     child: Text(
                                       Chill[index].text,
                                       style: const TextStyle(
@@ -260,7 +259,6 @@ class _Second_screenState extends State<Second_screen> {
                                 margin:
                                     const EdgeInsets.only(top: 20, left: 25),
                                 decoration: BoxDecoration(
-
                                     image: DecorationImage(
                                         image: NetworkImage(pop[index].image),
                                         fit: BoxFit.cover),
@@ -268,14 +266,14 @@ class _Second_screenState extends State<Second_screen> {
                                     color: Colors.transparent),
                               ),
                               Padding(
-                                padding:
-                                    const EdgeInsets.only( left: 20),
+                                padding: const EdgeInsets.only(left: 20),
                                 child: Container(
                                   color: Colors.transparent,
                                   height: 35,
                                   width: 210,
                                   alignment: Alignment.center,
-                                  child: Align(alignment: Alignment.centerLeft,
+                                  child: Align(
+                                    alignment: Alignment.centerLeft,
                                     child: Text(
                                       pop[index].text,
                                       style: const TextStyle(
@@ -306,24 +304,24 @@ class _Second_screenState extends State<Second_screen> {
                                 height: 230,
                                 width: 230,
                                 margin:
-                                const EdgeInsets.only(top: 20, left: 25),
+                                    const EdgeInsets.only(top: 20, left: 25),
                                 decoration: BoxDecoration(
-
                                     image: DecorationImage(
-                                        image: NetworkImage(OldisGold[index].image),
+                                        image: NetworkImage(
+                                            OldisGold[index].image),
                                         fit: BoxFit.cover),
                                     borderRadius: BorderRadius.circular(20),
                                     color: Colors.transparent),
                               ),
                               Padding(
-                                padding:
-                                const EdgeInsets.only( left: 20),
+                                padding: const EdgeInsets.only(left: 20),
                                 child: Container(
                                   color: Colors.transparent,
                                   height: 35,
                                   width: 210,
                                   alignment: Alignment.center,
-                                  child: Align(alignment: Alignment.centerLeft,
+                                  child: Align(
+                                    alignment: Alignment.centerLeft,
                                     child: Text(
                                       OldisGold[index].text,
                                       style: const TextStyle(
