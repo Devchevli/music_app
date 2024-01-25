@@ -109,7 +109,7 @@ class _CarousalSliderExState extends State<CarousalSliderEx>
                 spacing: 5,
                 expansionFactor: 4,
               ),
-            ),
+            ),//
             GestureDetector(
               onTap: () {
                 animatedeIcon();
