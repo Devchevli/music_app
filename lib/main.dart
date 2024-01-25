@@ -1,16 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:music_app/Home_Screen.dart';
-import 'package:music_app/Page_view.dart';
-import 'package:music_app/Sign_Up.dart';
 import 'package:music_app/carosual_slider.dart';
 import 'package:music_app/config/app_constant.dart';
-import 'package:music_app/forgotpassScreen.dart';
-import 'package:music_app/jst_try.dart';
-import 'package:music_app/Sign_In.dart';
-import 'package:music_app/second_screen.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
-import 'First_Screen.dart';
+
 
 Future<void> main() async{
   WidgetsFlutterBinding.ensureInitialized();
@@ -32,7 +25,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return const MaterialApp(
     debugShowCheckedModeBanner: false,
-      home: Home_screen(),
+      home: CarousalSliderEx(),
     );
   }
 }
