@@ -114,14 +114,30 @@ class _CarousalSliderExState extends State<CarousalSliderEx>
               onTap: () {
                 animatedeIcon();
               },
-              child: AnimatedIcon(
-                icon: isAnimated
-                    ? AnimatedIcons.play_pause
-                    : AnimatedIcons.pause_play,
-                progress: animatedController,
-                color: Colors.white,
+              child: Row(
+                crossAxisAlignment: CrossAxisAlignment.center,
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  IconButton(onPressed: (){player.seekBy(Duration(seconds: -10));}, icon: Icon(Icons.replay_10,color: Colors.white,)),
+                  AnimatedIcon(
+                    icon: isAnimated
+                        ? AnimatedIcons.play_pause
+                        : AnimatedIcons.play_pause,
+                    progress: animatedController,
+                    color: Colors.white,
+                  ),
+                  IconButton(onPressed: (){player.seekBy(Duration(seconds: 10));}, icon: Icon(Icons.forward_10,color: Colors.white,))
+
+
+                ],
+
+
               ),
+
+
+
             ),
+
             const SizedBox(
               height: 10,
             ),
@@ -130,6 +146,7 @@ class _CarousalSliderExState extends State<CarousalSliderEx>
               style: const TextStyle(color: Colors.white),
             ),
           ],
+
         ),
       ),
     );
