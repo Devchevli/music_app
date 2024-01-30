@@ -59,6 +59,7 @@ class _CarousalSliderExState extends State<CarousalSliderEx>
   }
 
   int activeIndex = 0;
+  int Audio_Songs = 0;
 
   @override
   Widget build(BuildContext context) {
@@ -74,79 +75,86 @@ class _CarousalSliderExState extends State<CarousalSliderEx>
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             CarouselSlider(
-                items: [
-                  for (String i in items)
-                    Container(
-                      decoration: BoxDecoration(
-                          borderRadius: BorderRadius.circular(12),
-                          image: DecorationImage(
-                              image: NetworkImage(i), fit: BoxFit.cover),
-                          boxShadow: kElevationToShadow[2]),
-                    )
-                ],
-                options: CarouselOptions(
-                    initialPage: activeIndex,
-                    onPageChanged: (i, r) {
-                      activeIndex = i;
-                      setState(() {});
-                    },
-                    viewportFraction: .59,
-                    height: 350,
-                    autoPlay: true,
-                    enlargeCenterPage: true,
-                    autoPlayCurve: Curves.easeInSine)),
+              items: [
+                for (String i in items)
+                  Container(
+                    decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(12),
+                        image: DecorationImage(
+                            image: NetworkImage(i), fit: BoxFit.cover),
+                        boxShadow: kElevationToShadow[2]),
+                  )
+              ],
+              options: CarouselOptions(
+                initialPage: activeIndex,
+                onPageChanged: (i, r) {
+                  activeIndex = i;
+                  setState(() {});
+                },
+                viewportFraction: .90,
+                height: 350,
+                autoPlay: false,
+                enlargeCenterPage: true,
+                autoPlayCurve: Curves.easeInSine,
+              ),
+            ),
             const SizedBox(
               height: 15,
             ),
-            AnimatedSmoothIndicator(
-              activeIndex: activeIndex,
-              count: items.length,
-              effect: const ExpandingDotsEffect(
-                activeDotColor: Colors.pinkAccent,
-                dotColor: Colors.white,
-                dotHeight: 7,
-                dotWidth: 7,
-                spacing: 5,
-                expansionFactor: 4,
-              ),
-            ),//
+            //
             GestureDetector(
               onTap: () {
                 animatedeIcon();
               },
-              child: Row(
-                crossAxisAlignment: CrossAxisAlignment.center,
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  IconButton(onPressed: (){player.seekBy(Duration(seconds: -10));}, icon: Icon(Icons.replay_10,color: Colors.white,)),
-                  AnimatedIcon(
-                    icon: isAnimated
-                        ? AnimatedIcons.play_pause
-                        : AnimatedIcons.play_pause,
-                    progress: animatedController,
-                    color: Colors.white,
-                  ),
-                  IconButton(onPressed: (){player.seekBy(Duration(seconds: 10));}, icon: Icon(Icons.forward_10,color: Colors.white,))
-
-
-                ],
-
-
+              child: Padding(
+                padding: const EdgeInsets.only(left: 20),
+                child: Column(
+                  mainAxisAlignment: MainAxisAlignment.start,
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Text(
+                      txt[activeIndex],
+                      style: const TextStyle(color: Colors.white),
+                    ),
+                    Row(
+                      crossAxisAlignment: CrossAxisAlignment.center,
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        IconButton(
+                            onPressed: () {
+                              player.seekBy(Duration(seconds: -10));
+                            },
+                            icon: Icon(
+                              Icons.replay_10,
+                              color: Colors.white,
+                            )),
+                        AnimatedIcon(
+                          icon: isAnimated
+                              ? AnimatedIcons.play_pause
+                              : AnimatedIcons.play_pause,
+                          progress: animatedController,
+                          color: Colors.white,
+                        ),
+                        IconButton(
+                            onPressed: () {
+                              player.seekBy(Duration(seconds: 10));
+                            },
+                            icon: Icon(
+                              Icons.forward_10,
+                              color: Colors.white,
+                            ))
+                      ],
+                    ),
+                  ],
+                ),
               ),
-
-
-
             ),
 
             const SizedBox(
               height: 10,
             ),
-            Text(
-              txt[activeIndex],
-              style: const TextStyle(color: Colors.white),
-            ),
-          ],
 
+          ],
         ),
       ),
     );
