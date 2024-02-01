@@ -79,7 +79,7 @@ class CarouselControllerPro extends ChangeNotifier {
 
   get getAlbumSongName {
     return albumSongName;
-  }
+  }//
 
   setAllOverSong() {
     _allSong.clear();
